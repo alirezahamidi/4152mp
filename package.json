@@ -1,0 +1,54 @@
+{
+  "name": "4152mp",
+  "version": "1.0.0",
+  "description": "4152Production Music Player",
+  "main": "source/main.js",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "Music",
+    "Player",
+    "4152mp"
+  ],
+  "scripts": {
+    "i": "npm install",
+    "start": "electron source/main.js",
+    "pack": "build --dir",
+    "x86": "build --ia32",
+    "x64": "build --x64"
+  },
+  "build": {
+    "appId": "musicplayer.producer4152",
+    "win": {
+      "target": "NSIS",
+      "icon": "./source/app/resources/images/icon.ico"
+    },
+    "asar": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alirezahamidi/4152mp.git"
+  },
+  "author": "Alireza Hamidi (4152production@gmail.com)",
+  "license": "ISC",
+  "homepage": "https://github.com/alirezahamidi/4152mp",
+  "dependencies": {
+    "hammer": "0.0.5",
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.100.2",
+    "musicmetadata": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.2.12",
+    "@types/node": "^7.0.13",
+    "electron": "^1.7.6",
+    "electron-builder": "^19.27.3",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.6",
+    "ts-node": "^2.1.0",
+    "typescript": "^2.2.1"
+  }
+}

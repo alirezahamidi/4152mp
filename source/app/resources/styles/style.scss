@@ -1,0 +1,160 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+
+$base-clr: #7fe5a3;
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: $base-clr;
+    overflow:hidden;
+}
+
+audio{
+    position:absolute;
+}
+
+h2{
+    font-size:18px;
+    font-weight:700;
+}
+
+h3{
+    font-size:16px;
+    font-weight:400;
+}
+
+p{
+    display: inline-block;
+    font-size:14px;
+    font-weight:400;
+    margin-bottom:10px;
+    color: grey;
+}
+
+.audio-player{
+    @include centerer;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition:all 0.2s;
+	 width:80vw;
+    max-width:700px;
+    background:white;
+    box-sizing: border-box;
+    @media screen and (max-width: 560px){
+        width:100vw;
+        background:white;
+    }
+}
+
+.info{
+    flex:1;
+    padding: 16px 30px;
+}
+
+.cover-art{
+    position:absolute;
+    bottom:160px;
+    right:-30px;
+    width: 230px;
+    height:230px;
+    background: url(http://images.fnewsmagazine.com/2012/02/veronica-falls-album-cover.jpg);
+    background-size: cover;
+    @media screen and (max-width: 560px){
+        position:relative;
+        width:100%;
+        height:80vw;
+        bottom:inherit;
+        right:inherit;
+    }
+    @media screen and (max-width: 520px){
+        position:relative;
+        width:100%;
+        height:90vw;
+        bottom:inherit;
+        right:inherit;
+    }
+    @media screen and (max-height: 500px){
+        display:none;
+        width: 0px;
+        height: 0px;
+    }
+    transition: all 0.2s;
+    a{
+        display:block;
+        width:100%;
+        height:100%;
+        &:hover{
+            background: darken($base-clr, 30%);
+            opacity:0.2;
+        }
+    }
+}
+
+.controls{
+    display:flex;
+    width:100%;
+    height:100px;
+    background:white;
+    margin-top:-1px;
+    padding:20px;
+    box-sizing:border-box;
+    &_plays{
+        flex:2;
+        display:flex;
+        justify-content: space-around;
+    }
+    &_player{
+        flex:1;
+        fill: #7FE5A3;
+        display:flex;
+        justify-content: space-around;
+    }
+    @media screen and (max-width: 420px){
+        flex-direction: column;
+        height:200px;
+    }
+	transition: all 0.2s;
+}
+
+#plays_btn, #prev_btn, #next_btn{
+    cursor:pointer;
+    width:26px;
+    max-width:18px;
+    &:hover{
+        fill: #565349;
+    }
+    transition: all 0.2s;
+}
+
+#pause_btn{
+    display:none;
+}
+
+#volume_btn, #shuffle_btn, #playlist_btn{
+    cursor:pointer;
+    width:23px;
+    max-width:18px;
+    //padding:10px;
+    &:hover{
+        fill: darken($base-clr, 30%);
+    }
+    transition: all 0.2s;
+}
+
+.progressbar_slide{
+    width:100%;
+    background:$base-clr;
+    height:6px;
+}
+.progressbar_range{
+    width:0;
+    background:black;
+    height:6px;
+}

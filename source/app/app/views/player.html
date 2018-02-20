@@ -1,0 +1,91 @@
+<div class="audio-player">
+    <div class="cover-art">
+        <img src="./resources/images/vec_02.png" class="fullscreen" id="cover-art" />
+    </div>
+    <div class="info">
+        <h3 id="mp-header"></h3>
+        <h4 id="mp-desc"></h4>
+        <p id="timeleft">00:00</p>
+        <div class="progressbar_slide">
+            <div class="progressbar_range"></div>
+        </div>
+    </div>
+    <div class="controls">
+        <div class="controls_plays">
+
+            <svg id="prev_btn" onclick="playPrevMusic()" viewBox="0 0 24.5 23.6">
+                <polygon points="0,11.8 13.5,0 13.5,10.7 24.5,0 24.5,23.6 13.5,12.9 13.5,23.6 " />
+            </svg>
+
+            <svg id="plays_btn" viewBox="0 0 24.5 30.9" onclick="playControlls('any')">
+                <g id="play_btn">
+                    <path d="M0,30.9L0,0l24.5,15.4L0,30.9z" />
+                </g>
+                <g id="pause_btn">
+                    <rect x="0" y="0" width="8.2" height="30.9" />
+                    <rect x="16.2" y="0" width="8.2" height="30.9" />
+                </g>
+            </svg>
+
+            <svg id="next_btn" onclick="playNextMusic()" viewBox="0 0 24.5 23.6">
+                <polygon points="25,11.8 11.5,0 11.5,10.7 0.5,0 0.5,23.6 11.5,12.9 11.5,23.6 " />
+            </svg>
+        </div>
+
+        <div class="controls_player">
+            <svg id="volume_btn" viewBox="0 0 23 23">
+                <path d="M17.5,6.6v9.9L11.4,13H5.5v-3h6L17.5,6.6z M10.7,7H2.5v9h8.2l9.8,5.3V1.2L10.7,7z" />
+            </svg>
+
+            <svg id="shuffle_btn" viewBox="0 0 23 23">
+
+            </svg>
+
+
+            <svg id="shuffle_btn" viewBox="0 0 23 23" onclick="changeShuffle()">
+                <g id="shuffel-off" style="display: block;">
+                    <path d="M7.3,6l0.4,2.8l3.6-5l-5-3.6l0.5,3C3.6,4.4,1.1,7.4,1.1,11c0,4.4,2.4,8,7.4,8.3v-2.7
+                        c-3-0.3-4.7-2.7-4.7-5.6C3.8,8.8,5.5,7,7.3,6z" />
+                    <path d="M21.5,11c0-4.4-4-8-8-8.3v2.7c2,0.3,5.2,2.7,5.2,5.6c0,2.2-1.2,4-3,5l-0.4-2.8l-3.6,5l5,3.6l-0.6-3
+                        C19.4,17.6,21.5,14.6,21.5,11z" />
+                </g>
+
+                <g id="shuffel-one" style="display: none;">
+                    <path d="M7.3,6l0.4,2.8l3.6-5l-5-3.6l0.5,3C3.6,4.4,1.1,7.4,1.1,11c0,4.4,2.4,8,7.4,8.3v-2.7
+							        c-3-0.3-4.7-2.7-4.7-5.6C3.8,8.8,5.5,7,7.3,6z" />
+                    <path d="M21.5,11c0-4.4-4-8-8-8.3v2.7c2,0.3,5.2,2.7,5.2,5.6c0,2.2-1.2,4-3,5l-0.4-2.8l-3.6,5l5,3.6l-0.6-3
+                        C19.4,17.6,21.5,14.6,21.5,11z" />
+
+                    <text transform="matrix(0.654654, 0, 0, 0.727124, 10, 20)" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+                        font-size="24" id="svg_1" stroke-width="0.01" stroke="#fff" fill="#020">1</text>
+                </g>
+
+                <g id="shuffel-all" style="display: none;">
+                    <path d="M7.3,6l0.4,2.8l3.6-5l-5-3.6l0.5,3C3.6,4.4,1.1,7.4,1.1,11c0,4.4,2.4,8,7.4,8.3v-2.7
+                        c-3-0.3-4.7-2.7-4.7-5.6C3.8,8.8,5.5,7,7.3,6z" />
+                    <path d="M21.5,11c0-4.4-4-8-8-8.3v2.7c2,0.3,5.2,2.7,5.2,5.6c0,2.2-1.2,4-3,5l-0.4-2.8l-3.6,5l5,3.6l-0.6-3
+                        C19.4,17.6,21.5,14.6,21.5,11z" />
+                    <text transform="matrix(0.654654, 0, 0, 0.727124, 6, 20)" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+                        font-size="24" id="svg_1" stroke-width="0.01" stroke="#fff" fill="#020">All</text>
+                </g>
+            </svg>
+
+
+            <svg id="shuffle_btn" viewBox="0 0 23 23">
+            </svg>
+
+            <!-- <svg><defs><path d="M214.26 244.87L314.43 105.74L175.3 5.57C183.65 55.65 188.29 83.48 189.22 89.04C100.17 122.43 30.61 205.91 30.61 306.09C30.61 428.52 97.39 528.7 236.52 537.04C236.52 529.53 236.52 469.43 236.52 461.91C153.04 453.57 105.74 386.78 105.74 306.09C105.74 244.87 153.04 194.78 203.13 166.96C204.61 177.34 208.32 203.32 214.26 244.87Z" id="b3p7IQ1JhS"></path><path d="M375.65 75.13C375.65 82.64 375.65 142.75 375.65 150.26C431.3 158.61 520.35 225.39 520.35 306.09C520.35 367.3 486.96 417.39 436.87 445.22C436.13 440.02 432.42 414.05 425.74 367.3L325.57 506.43L464.7 606.61C454.68 556.52 449.11 528.7 448 523.13C539.83 489.74 598.26 406.26 598.26 306.09C598.26 183.65 486.96 83.48 375.65 75.13Z" id="a3rnyO2NfU"></path><text id="d4MjHSfVC" font-size="345" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -269.96798292423216 -82.73212379936149)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge"><tspan dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="start">All</tspan></text>
+            
+            <mask id="maskf5YiYtXn" x="199.07" y="196.46" width="441.08" height="517.08" maskUnits="userSpaceOnUse"><rect x="199.07" y="196.46" width="441.08" height="517.08" fill="white"></rect><use xlink:href="#d4MjHSfVC" opacity="1" fill="black"></use></mask></defs><g><g><g><use xlink:href="#b3p7IQ1JhS" opacity="1" fill="#000000" fill-opacity="1"></use><g><use xlink:href="#b3p7IQ1JhS" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#a3rnyO2NfU" opacity="1" fill="#000000" fill-opacity="1"></use><g><use xlink:href="#a3rnyO2NfU" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g id="cPPn0mmGb"><use xlink:href="#d4MjHSfVC" opacity="1" fill="#ff3300" fill-opacity="1"></use><g mask="url(#maskf5YiYtXn)"><use xlink:href="#d4MjHSfVC" opacity="1" fill-opacity="0" stroke="#ffffff" stroke-width="23.04" stroke-opacity="1"></use></g></g></g></g></svg> -->
+
+
+            <svg id="playlist_btn" onclick="playlist()" viewBox="0 0 23 23">
+                <rect x="1.5" y="2" width="20" height="3" />
+                <rect x="1.5" y="9" width="20" height="3" />
+                <rect x="1.5" y="17" width="20" height="3" />
+            </svg>
+
+        </div>
+    </div>
+
+</div>

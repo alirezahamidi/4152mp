@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launcher",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/source/main.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                "."
+            ],
+            "env": {},
+            "console": "internalConsole",
+            "sourceMaps": false
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Build x64",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-builder",
+            "runtimeArgs": [
+                "build",
+                "--win",
+                "--x64"
+            ],
+            "port": 5858,
+            "protocol": "legacy",
+            "timeout": 1000000000
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Build x86",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-builder",
+            "runtimeArgs": [
+                "build",
+                "--win",
+                "--ia32"
+            ],
+            "port": 5858,
+            "protocol": "legacy",
+            "timeout": 1000000000
+        }
+    ]
+}
