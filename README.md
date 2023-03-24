@@ -1,4 +1,4 @@
-#4152mp
+# 4152mp
 
 This Project is an HTML/CSS/JS/Electron Music Player That Published as an Open Source And FREE App!
 Help Us To Improve and Own Your Desktop Linux/Windows/Mac Beutifull Music Player!
@@ -20,8 +20,8 @@ https://gitlab.com/AlirezaDadrass/ELEMATIONER.git
  
  At Last you can use Project as a Framework to Develope Your App on Electron and Build it Easily.
 
-#You can Use Alt+Ctrl+ Right or Left Arrow to change music
+# You can Use Alt+Ctrl+ Right or Left Arrow to change music
 
-#Use File Menu to open music in player
+# Use File Menu to open music in player
 
 If you had any problem with installing node modules remove ```package-lock.json``` file and retry.
